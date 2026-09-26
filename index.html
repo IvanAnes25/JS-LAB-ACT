@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TypeNaKaibigan — Typing Speed Test</title>
+<meta name="description" content="A minimalist typing speed test with live WPM/accuracy tracking and a ranked attempt history.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-type">
+  <div class="app">
+    <header>
+      <div class="brand"><span class="dot"></span>TypeNaKaibigan</div>
+      <button class="nav-btn" id="toProfileBtn">Profile Dashboard →</button>
+    </header>
+
+    <main>
+      <div class="modes" id="modes">
+        <button class="mode-btn" data-time="15">15s</button>
+        <button class="mode-btn active" data-time="30">30s</button>
+        <button class="mode-btn" data-time="60">60s</button>
+        <button class="mode-btn" data-time="120">120s</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b id="time">30</b><span>seconds</span></div>
+        <div class="stat"><b id="wpm">0</b><span>wpm</span></div>
+        <div class="stat"><b id="acc">100</b><span>% accuracy</span></div>
+      </div>
+
+      <div class="type-area" id="typeArea">
+        <div class="text-display" id="textDisplay"></div>
+      </div>
+      <input class="hidden-input" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-hidden="true" tabindex="-1">
+
+      <div class="footer-row">
+        <div class="hint" id="hint">Just start typing</div>
+        <button class="action" id="restartBtn">Restart</button>
+      </div>
+      <div class="result-banner" id="result"></div>
+    </main>
+  </div>
+</div>
+
+<div class="screen" id="screen-profile">
+  <div class="app">
+    <header>
+      <div class="brand"><span class="dot"></span>TypeNaKaibigan</div>
+      <button class="nav-btn" id="toTypeBtn">← Back to typing</button>
+    </header>
+
+    <main>
+      <h1 class="profile-title">Profile Dashboard</h1>
+      <div class="profile-summary">
+        <div class="stat"><b id="pBest">0</b><span>best wpm</span></div>
+        <div class="stat"><b id="pAvg">0</b><span>avg wpm</span></div>
+        <div class="stat"><b id="pCount">0</b><span>tests taken</span></div>
+      </div>
+      <div class="profile-header-row">
+        <h2>Ranked by speed</h2>
+        <button class="link-btn" id="clearAllBtn">Clear all</button>
+      </div>
+      <div id="attemptList"></div>
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
